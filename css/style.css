@@ -1,0 +1,137 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-size: cover;   
+}
+.login{
+    margin-top: 25%;
+    background-color:rgb(79, 41, 184);
+    border-radius: 15px;
+    padding: 20px;
+}
+.login h3{
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+.login label{
+    color: white;
+}
+.logo{
+    width: 150px;
+    height: 50px;
+   
+}
+#carouselExampleInterval{
+    width: 100%;
+}
+#carouselExampleInterval .carousel-item{
+    height: 470px;
+}
+#carouselExampleInterval img{
+    height: 500px;
+    width: 700px;
+}
+#sign{
+    border-radius: 10px;
+    height: 300px;
+    width: 450px;
+}
+.slide{
+    padding: 10px;
+    
+}
+.container .card{
+   /* float: left;*/
+    margin: 20px;
+    
+    
+}
+.container .card img{
+    height: 180px;
+    width: 275px;
+  
+}
+footer{
+    background-color: #198754;
+    color: black;
+    height: 6em;
+    margin-top: 10%;
+    text-align: center; 
+}
+footer .icon{
+    font-size:20px;
+    
+ }
+ footer a{
+     color: black;
+ }
+.ker
+{
+    margin-top: 5%;
+    width: 1400px;
+    text-align: justify;
+    background-color: rgb(128, 122, 162);
+    
+    padding: 10px;
+    border-radius: 6px;
+}
+.ker h3{
+    text-align: center;
+    color: #0b0c0c;
+    font-weight: b;
+}
+.reach .card{
+    margin: 15px;
+}
+.reach .card h5{
+    text-align: center;
+}
+.navbar{
+    position: fixed;
+    scroll-behavior: unset;
+}
+.news{
+    margin-left: 5%;
+}
+.news .card{
+     float: right;
+     margin: 20px;
+     margin-left: 12%;
+}
+.ksd
+{
+    margin-top: 5%;
+    margin-left: 1%;
+    width: 1400px;
+    text-align: justify;
+    background-color: rgb(223, 117, 237);
+    border: 1px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.place .card{
+    margin:15px;
+    margin-left: 50px;
+}
+.place .card img{
+    height: 180px;
+    width: 275px;
+  
+}
+.place p{
+    text-align: justify;
+}
+.path{
+    color: white;
+}
+.path a{
+    text-decoration: none;
+    color: white;
+}
+#phr{
+    border-top: 2px solid white;
+}
