@@ -74,13 +74,13 @@
             <form class="login">
                 <div class="mb-3">
                   <h3>User Login </h3><br>
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <label for="exampleInputEmail1" class="form-label" id="login-email-lbl">Email address</label>
+                  <input type="email" onblur="loginMailVal()" class="form-control" id="login-email" aria-describedby="emailHelp">
                   <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <label for="exampleInputPassword1" class="form-label" id="login-pwd-lbl">Password</label>
+                  <input type="password" onblur="loginPwdVal()" class="form-control" id="login-pwd">
                 </div>
                 <div class="mb-3 form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -113,6 +113,6 @@
     
     </div>
      
-
+<script src="./scripts/login_validation.js"></script>
 </body>
 </html>
