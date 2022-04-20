@@ -133,7 +133,7 @@ function mailVal() {
     flag2=false;
   }
   else {
-    signUpMailLbl.textContent = "Invalid Format";
+    signUpMailLbl.textContent = "Invalid Email Format";
     signUpMailLbl.style.color = "red";
     signUpMailLbl.style.fontWeight = "bold";
     signUpMail.style.borderColor = "red";
@@ -222,13 +222,16 @@ function validateForm(){
   mobVal();
   pwdMatch();
   pwdChk();
- if(! terms.checked){
+ if(flag1&&flag2&&flag3&&flag4&&flag5){
+  if (!terms.checked){
    alert("Agree the terms & conditions");
  }
-  else if(flag1&&flag2&&flag3&&flag4&&flag5){
+  else{ 
     alert("Account created Successfully");
   }
-  else{
-    return false;
-  }
+ 
+}
+else{
+  return false;
+}
 }
