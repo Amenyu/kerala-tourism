@@ -200,7 +200,7 @@ function pwdChk(){
     flag5=false;
   }
   else if(text.textContent !== "Your password is strong" && input.value.length !==0){
-    pwdlbl.textContent = "Password must be combination Alphabets,Numbers&Symbols having minimum length 8";
+    pwdlbl.textContent = "Password should contain at least one uppercase, one lower case and one number having minimum length 8";
     pwdlbl.style.color = "red";
     pwdlbl.style.fontWeight = "bold";
     input.style.borderColor = "red";

@@ -10,7 +10,7 @@ function loginPwdVal() {
   if (!loginpwd.value.match(pwdregexp) &&loginpwd.value.length !==0) {
     loginpwd.style.borderColor = "red";
     loginpwd.style.borderWidth = "medium";
-    loginpwdlbl.textContent = "Password must be combination Alphabets,Numbers&Symbols having minimum length 8";
+    loginpwdlbl.textContent = "Password should contain at least one uppercase, one lower case and one number having minimum length 8 ";
     loginpwdlbl.style.color = "red";
     flag1=false;
   }
