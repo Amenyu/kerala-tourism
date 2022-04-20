@@ -199,7 +199,7 @@ function pwdChk(){
     input.style.borderColor = "red";
     flag5=false;
   }
-  else if(text.textContent !== "Your password is strong" && input.value.length !==0){
+  else if(! /^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$/.test(input.value) && input.value.length !==0){
     pwdlbl.textContent = "Password should contain at least one uppercase, one lower case and one number having minimum length 8";
     pwdlbl.style.color = "red";
     pwdlbl.style.fontWeight = "bold";
