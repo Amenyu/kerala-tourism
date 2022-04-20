@@ -6,11 +6,11 @@ var loginmaillbl = document.getElementById("login-email-lbl");
 var flag1=false;
 var flag2=false
 function loginPwdVal() {
-  // let pwdregexp = /^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/;
-  if (loginpwd.value.length > 0 && loginpwd.value.length < 8) {
+   let pwdregexp = /^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/;
+  if (!loginpwd.value.match(pwdregexp) &&loginpwd.value.length !==0) {
     loginpwd.style.borderColor = "red";
     loginpwd.style.borderWidth = "medium";
-    loginpwdlbl.textContent = "Password must be at least 8 characters";
+    loginpwdlbl.textContent = "Password must be combination Alphabets,Numbers&Symbols having minimum length 8";
     loginpwdlbl.style.color = "red";
     flag1=false;
   }
