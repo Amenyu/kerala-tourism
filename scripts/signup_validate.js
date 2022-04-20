@@ -24,7 +24,8 @@ var terms=document.getElementById("terms");
 
 let regExpWeak = /[a-z]/;
 let regExpMedium = /\d+/;
-let regExpStrong = /.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/;
+// let regExpStrong = /.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/;
+let regExpStrong =/[A-Z]/;
 
 function pwdVal() {
   if (input.value != "") {
