@@ -74,19 +74,19 @@
             <form class="login">
                 <div class="mb-3">
                   <h3>User Login </h3><br>
-                  <label for="exampleInputEmail1" class="form-label" id="login-email-lbl">Email address</label>
+                  <label for="exampleInputEmail1" class="form-label" id="login-email-lbl">Email address *</label>
                   <input type="email" onblur="loginMailVal()" class="form-control" id="login-email" aria-describedby="emailHelp">
                   <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label" id="login-pwd-lbl">Password</label>
+                  <label for="exampleInputPassword1" class="form-label" id="login-pwd-lbl">Password *</label>
                   <input type="password" onblur="loginPwdVal()" class="form-control" id="login-pwd">
-                </div>
-                <div class="mb-3 form-check">
+                </div><br>
+                <!-- <div class="mb-3 form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                </div> -->
+                <button type="button" onclick="loginValidate()" class="btn btn-primary" style="width: 100%;">Submit</button>
                 <br><br>
                 <div>
                   <a href="signup.html" style="text-decoration: none;color: greenyellow;">New User ? Sign Up</a>

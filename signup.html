@@ -83,8 +83,8 @@
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="text" id="form3Example1c" class="form-control" />
-                        <label class="form-label" for="form3Example1c">Your Name *</label>
+                        <input type="text" onblur="nameVal()" id="myname" class="form-control" />
+                        <label class="form-label" for="nme" id="name-lbl">Your Name *</label>
                       </div>
                     </div>
   
@@ -92,7 +92,7 @@
                       <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                         <input type="email" onblur="mailVal()" id="signup_mail" class="form-control"/>
-                        <label class="form-label" for="form3Example3c" id="signup_mail-lbl">Your Email *</label>
+                        <label class="form-label" for="mail" id="signup_mail-lbl">Your Email *</label>
                       </div>
                     </div>
 
@@ -107,8 +107,8 @@
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="password" onkeyup="pwdVal()" id="form3Example4c" class="form-control sign-pwd"/>
-                        <label class="form-label" for="form3Example4c">Password *</label>
+                        <input type="password" onkeyup="pwdVal()" onblur="pwdChk()" id="form3Example4c" class="form-control sign-pwd"/>
+                        <label class="form-label" for="pswd1" id="pswdlbl">Password *</label>
                         <div class="form-label indicator">
                           <span class="weak"></span>
                           <span class="medium"></span>
@@ -122,7 +122,7 @@
                       <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                         <input type="password" onblur="pwdMatch()" id="re-pwd" class="form-control" />
-                        <label class="form-label" for="form3Example4cd" id="re-pwd-lbl">Repeat your password *</label>
+                        <label class="form-label" for="pswd2" id="re-pwd-lbl">Repeat your password *</label>
                       </div>
                     </div>
   
@@ -131,15 +131,15 @@
                         class="form-check-input me-2"
                         type="checkbox"
                         value=""
-                        id="form2Example3c"
+                        id="terms"
                       />
-                      <label class="form-check-label" for="form2Example3">
+                      <label class="form-check-label" id="terms-lbl" for="form2Example3">
                         I agree all statements in <a href="#!">Terms of service</a>
                       </label>
                     </div>
   
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <button type="button" class="btn btn-primary btn-lg">Register</button>
+                      <button type="button" onclick="validateForm()" class="btn btn-primary btn-lg">Register</button>
                     </div>
                     <br>
                     <a href="login.html">Login</a>

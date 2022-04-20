@@ -5,6 +5,7 @@ const medium = document.querySelector(".medium");
 const strong = document.querySelector(".strong");
 const text = document.querySelector(".pwd-msg");
 
+pwdlbl=document.getElementById("pswdlbl");
 var rePwd = document.getElementById("re-pwd");
 var rePwdLbl = document.getElementById("re-pwd-lbl");
 
@@ -13,6 +14,13 @@ var mobLbl = document.getElementById("mob-lbl");
 
 var signUpMail = document.getElementById("signup_mail");
 var signUpMailLbl = document.getElementById("signup_mail-lbl");
+
+var myname = document.getElementById("myname");
+var namelbl = document.getElementById("name-lbl");
+
+var termslbl=document.getElementById("terms-lbl");
+var terms=document.getElementById("terms");
+
 
 let regExpWeak = /[a-z]/;
 let regExpMedium = /\d+/;
@@ -37,7 +45,7 @@ function pwdVal() {
     )
       no = 2;
     if (
-      input.value.length >= 6 &&
+      input.value.length >= 8 &&
       input.value.match(regExpWeak) &&
       input.value.match(regExpMedium) &&
       input.value.match(regExpStrong)
@@ -74,48 +82,153 @@ function pwdVal() {
   }
 }
 pwdVal();
+var flag1=false;
+var flag2=false;
+var flag3=false;
+var flag4=false;
+var flag5=false;
+
+function nameVal(){
+  let nameregexp= /^[a-zA-Z\s]+$/;
+  if(myname.value.match(nameregexp)){
+    namelbl.textContent = "Your Name *";
+    namelbl.style.color = "black";
+    namelbl.style.fontWeight = "normal";
+    myname.style.borderColor = "lightgrey";
+    flag1=true;
+  }
+  else if(myname.value.length==0){
+    namelbl.textContent = "Name is required";
+    namelbl.style.color = "red";
+    namelbl.style.fontWeight = "bold";
+    myname.style.borderColor = "red";
+    flag1=false;
+  }
+  else{
+      namelbl.textContent = "Invalid Data";
+      namelbl.style.color = "red";
+      namelbl.style.fontWeight = "bold";
+      myname.style.borderColor = "red";
+      flag1=false;
+  }
+}
+
 
 function mailVal() {
   let mailregexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-  if (signUpMail.value.match(mailregexp) || signUpMail.value.length == 0) {
+  if (signUpMail.value.match(mailregexp) ) {
     signUpMailLbl.textContent = "Your Email *";
     signUpMailLbl.style.color = "black";
     signUpMailLbl.style.fontWeight = "normal";
     signUpMail.style.borderColor = "lightgrey";
-  } else {
+    flag2=true;
+    
+  } 
+  else if(signUpMail.value.length == 0){
+    signUpMailLbl.textContent = "Email is required";
+    signUpMailLbl.style.color = "red";
+    signUpMailLbl.style.fontWeight = "bold";
+    signUpMail.style.borderColor = "red";
+    flag2=false;
+  }
+  else {
     signUpMailLbl.textContent = "Invalid Format";
     signUpMailLbl.style.color = "red";
     signUpMailLbl.style.fontWeight = "bold";
     signUpMail.style.borderColor = "red";
+    flag2=false;
   }
 }
 
 function mobVal() {
   var mobRegExp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-  if (mob.value.match(mobRegExp) || mob.value.length == 0) {
+  if (mob.value.match(mobRegExp)) {
     mobLbl.textContent = "Your Mobile *";
     mobLbl.style.color = "black";
     mobLbl.style.fontWeight = "normal";
     mob.style.borderColor = "lightgrey";
-  } else {
-    mobLbl.textContent = "Invalid Format";
+    flag3=true;
+  }
+  else if( mob.value.length == 0){
+    mobLbl.textContent = "Mobile is required";
     mobLbl.style.color = "red";
     mobLbl.style.fontWeight = "bold";
     mob.style.borderColor = "red";
+    flag3=false;
+  }
+   else {
+    mobLbl.textContent = "Invalid Format (It should be XXXXXXXXXX,XXX-XXX-XXXX,XXX.XXX.XXXX,XXX XXX XXXX)";
+    mobLbl.style.color = "red";
+    mobLbl.style.fontWeight = "bold";
+    mob.style.borderColor = "red";
+    flag3=false;
   }
 }
 
 function pwdMatch() {
-  if (rePwd.value === input.value || rePwd.value.length == 0) {
+  if (rePwd.value === input.value && rePwd.value.length !== 0) {
     rePwdLbl.textContent = "Repeat your password *";
     rePwdLbl.style.color = "black";
     rePwdLbl.style.fontWeight = "normal";
     rePwd.style.borderColor = "lightgrey";
-  } else {
+    flag4=true;
+  } 
+  else if(rePwd.value.length == 0){
+    rePwdLbl.textContent = "Password confirmation required";
+    rePwdLbl.style.color = "red";
+    rePwdLbl.style.fontWeight = "bold";
+    rePwd.style.borderColor = "red";
+    flag4=false;
+  }
+  else {
     rePwdLbl.textContent = "Password does not match";
     rePwdLbl.style.color = "red";
     rePwdLbl.style.fontWeight = "bold";
     rePwd.style.borderColor = "red";
+    flag4=false;
+  }
+}
+
+function pwdChk(){
+  if(input.value.length==0){
+    pwdlbl.textContent = "Password is required";
+    pwdlbl.style.color = "red";
+    pwdlbl.style.fontWeight = "bold";
+    input.style.borderColor = "red";
+    flag5=false;
+  }
+  else if(text.textContent !== "Your password is strong" && input.value.length !==0){
+    pwdlbl.textContent = "Password must be strong";
+    pwdlbl.style.color = "red";
+    pwdlbl.style.fontWeight = "bold";
+    input.style.borderColor = "red";
+    flag5=false;
+  }
+  else{
+    pwdlbl.textContent = "Password *";
+    pwdlbl.style.color = "black";
+    pwdlbl.style.fontWeight = "normal";
+    input.style.borderColor = "lightgrey";
+    flag5=true;
+  }
+}
+
+
+function validateForm(){
+
+  nameVal();
+  mailVal();
+  mobVal();
+  pwdMatch();
+  pwdChk();
+ if(! terms.checked){
+   alert("Agree the terms & conditions");
+ }
+  else if(flag1&&flag2&&flag3&&flag4&&flag5){
+    alert("Account created Successfully");
+  }
+  else{
+    return false;
   }
 }
