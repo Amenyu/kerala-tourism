@@ -6,7 +6,7 @@ var loginmaillbl = document.getElementById("login-email-lbl");
 var flag1=false;
 var flag2=false
 function loginPwdVal() {
-   let pwdregexp = /^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/;
+   let pwdregexp = /^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$/;
   if (!loginpwd.value.match(pwdregexp) &&loginpwd.value.length !==0) {
     loginpwd.style.borderColor = "red";
     loginpwd.style.borderWidth = "medium";
